@@ -13,13 +13,18 @@ except AssertionError:
 	print("vous devez rentrer une somme d'argent supérieur à 0")
 
 while sommeArgent>0:
-	numeroMise=input("Sur quel nupéro souhaiter vous miser? (entre 0 et 49)")
-	try:
-		numeroMise=int(numeroMise)
-		assert numeroMise>=0 
-		assert numeroMise<=49
-	except:
-		print("vous devez rentrer un nombre compris entre 0 et 49")
+
+	while numeroMise<0 || numeroMise>49:
+		numeroMise=input("Sur quel nupéro souhaiter vous miser? (entre 0 et 49)")
+		try:
+			numeroMise=int(numeroMise)
+			assert numeroMise>=0 
+			assert numeroMise<=49
+		except AssertionError:
+			print("vous devez rentrer un nombre compris entre 0 et 49")
+		except ValueError:
+			print("vous devez rentrer un nombre")
+			numeroMise=-1
 	mise=input("Combien d'argent souhaiter vous miser?")
 	try:
 		mise=int(mise)
