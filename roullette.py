@@ -1,23 +1,30 @@
 #!/usr/local/lib
 # -*-coding:Utf-8 -*
 import random
-sommeArgent =input("quel est votre somme d'argent de départ")
+sommeArgent =input("quel est votre somme d'argent de départ:  ")
 numeroMise=0
 mise=0
 try:
 	sommeArgent=int(sommeArgent)
+	assert sommeArgent>0
 except  ValueError:
 	print("vous devez rentrer un nombre")
+except AssertionError:
+	print("vous devez rentrer une somme d'argent supérieur à 0")
 
 while sommeArgent>0:
-	numeroMise=input("Sur quel nupéro souhaiter vous miser?")
+	numeroMise=input("Sur quel nupéro souhaiter vous miser? (entre 0 et 49)")
 	try:
 		numeroMise=int(numeroMise)
+		assert numeroMise>=0 
+		assert numeroMise<=49
 	except:
-		print("vous devez rentrer un nombre")
+		print("vous devez rentrer un nombre compris entre 0 et 49")
 	mise=input("Combien d'argent souhaiter vous miser?")
 	try:
 		mise=int(mise)
+		assert mise<=sommeArgent
+		assert mise>0
 	except :
 		print("vous devez rentrer un numéro")
 	rand=random.randint(0,50)
