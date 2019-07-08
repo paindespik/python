@@ -19,6 +19,14 @@ fonction["non_fete"]=non_fete
 
 fonction["fete"]()
 """
+"""
 fruits = {"pommes":21, "melons":3, "poires":31}
 for cle,beuleu in fruits.items():
-    print(cle,": ",beuleu)
+    print("{}{}".format(cle,beuleu))
+"""
+"""
+parametres=dict()
+parametres["sep"]=","
+parametres["end"]=" -\n"
+print("beuleu","beuleu","beuleu",**parametres)
+"""
