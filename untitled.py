@@ -1,30 +1,24 @@
 #!/usr/local/lib
 # -*-coding:Utf-8 -*
 
-def afficher(*parametres, sep=' ', fin='\n'):
-    """Fonction chargée de reproduire le comportement de print.
-    
-    Elle doit finir par faire appel à print pour afficher le résultat.
-    Mais les paramètres devront déjà avoir été formatés. 
-    On doit passer à print une unique chaîne, en lui spécifiant de ne rien mettre à la fin :
+"""
+dictionnaire=dict()
+dictionnaire={"pseudo   ":"paindespik","mdp":"dovakin0101"}
+del dictionnaire["pseudo"]
+print(dictionnaire)
+"""
+"""
+def fete():
+    print("c\'est la fête!")
+def non_fete():
+    print("c\'est pas la fête!")
 
-    print(chaine, end='')"""
-    
-    # Les paramètres sont sous la forme d'un tuple
-    # Or on a besoin de les convertir
-    # Mais on ne peut pas modifier un tuple
-    # On a plusieurs possibilités, ici je choisis de convertir le tuple en liste
-    parametres = list(parametres)
-    # On va commencer par convertir toutes les valeurs en chaîne
-    # Sinon on va avoir quelques problèmes lors du join
-    for i, parametre in enumerate(parametres):
-        parametres[i] = str(parametre)
-    # La liste des paramètres ne contient plus que des chaînes de caractères
-    # À présent on va constituer la chaîne finale
-    chaine = sep.join(parametres)
-    # On ajoute le paramètre fin à la fin de la chaîne
-    chaine += fin
-    # On affiche l'ensemble
-    print(chaine)
+fonction=dict()
+fonction["fete"]=fete
+fonction["non_fete"]=non_fete
 
-afficher("beuleu","bordel","bite","couilles","beuleu")
+fonction["fete"]()
+"""
+fruits = {"pommes":21, "melons":3, "poires":31}
+for cle,beuleu in fruits.items():
+    print(cle,": ",beuleu)
