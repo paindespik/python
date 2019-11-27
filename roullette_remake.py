@@ -1,7 +1,9 @@
 #!/usr/local/lib
 # -*-coding:Utf-8 -*
 import random
+import datetime
 bourse=0
+
 
 while bourse<=0 :
     try:
