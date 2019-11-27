@@ -10,7 +10,6 @@ from fonctions import *
 
 # On récupère les scores de la partie
 scores = recup_scores()
-
 # On récupère un nom d'utilisateur
 utilisateur = recup_nom_utilisateur()
 
