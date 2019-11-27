@@ -18,7 +18,7 @@ while sommeArgent>0:
 		numeroMise=input("Sur quel nupéro souhaiter vous miser? (entre 0 et 49): ")
 		try:
 			numeroMise=int(numeroMise)
-			assert numeroMise>=0 
+			assert numeroMise>=0
 			assert numeroMise<=49
 		except AssertionError:
 			print("vous devez rentrer un nombre compris entre 0 et 49")
