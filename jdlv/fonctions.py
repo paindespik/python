@@ -38,26 +38,46 @@ def AfficherTableau(simulation):
 
 
 def PasserTour(simulation):
-    listeDeTransition=InitialiserTableau(len(simulation), 0)
+    taille = len(simulation)-1
+    listeDeTransition = InitialiserTableau(len(simulation), 0)
     for i in range(0, len(simulation)):
         for j in range(0, len(simulation)):
             entourage = 0
-            if(i!=0):
+            if(i != 0):
                 if simulation[i-1][j]:
                     entourage += 1
-            
-            if simulation[i-1][j-1]:
-                entourage += 1
-            if simulation[i][j-1]:
-                entourage += 1
-            if simulation[i+1][j-1]:
-                entourage += 1
-            if simulation[i+1][j]:
-                entourage += 1
-            if simulation[i+1][j+1]:
-                entourage += 1
-            if simulation[i][j+1]:
-                entourage += 1
-            if simulation[i-1][j-1]:
-                entourage += 1
-            if simulation[i][j]
+            if(i != 0 and j != 0):
+                if simulation[i-1][j-1]:
+                    entourage += 1
+            if(j != 0):
+                if simulation[i][j-1]:
+                    entourage += 1
+            if i != taille:
+                if simulation[i+1][j-1]:
+                    entourage += 1
+            if i != taille:
+                if simulation[i+1][j]:
+                    entourage += 1
+            if i != taille and j != taille:
+                if simulation[i+1][j+1]:
+                    entourage += 1
+            if j != taille:
+                if simulation[i][j+1]:
+                    entourage += 1
+            if i != 0 and j != 0:
+                if simulation[i-1][j-1]:
+                    entourage += 1
+            if simulation[i][j]:
+                if entourage < 2 or entourage > 3:
+                    listeDeTransition[i][j] = True
+            else:
+                if entourage == 2:
+                    listeDeTransition[i][j] = True
+    for i in range(0, len(simulation)):
+        for j in range(0, len(simulation)):
+            if(listeDeTransition[i][j]):
+                if simulation[i][j]:
+                    simulation[i][j] = False
+                else:
+                    simulation[i][j] = True
+    return simulation
